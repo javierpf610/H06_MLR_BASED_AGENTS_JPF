@@ -4,7 +4,7 @@ import calcsrc.Gradient;
 import jade.core.Agent;
 import jade.core.behaviours.OneShotBehaviour;
 
-public class MLRAgent extends Agent{
+public class MyAgent extends jade.core.Agent {
     private AgentGUI myGUI;
     protected void setup() {
         myGUI=new AgentGUI(this);

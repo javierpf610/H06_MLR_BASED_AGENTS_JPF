@@ -1,14 +1,13 @@
 package agents;
-import agents.MLRAgent;
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
 public class AgentGUI extends JFrame {
-    private MLRAgent myAgent;
+    private MyAgent myAgent;
     private JTextField x1Field,x2Field,x3Field;
 
-    AgentGUI(MLRAgent a) {
+    AgentGUI(MyAgent a) {
         super(a.getLocalName());
 
         myAgent = a;
