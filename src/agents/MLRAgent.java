@@ -1,5 +1,6 @@
 package agents;
 import calcsrc.MultipleLinearRegression;
+import calcsrc.Gradient;
 import jade.core.Agent;
 import jade.core.behaviours.OneShotBehaviour;
 
@@ -9,7 +10,7 @@ public class MLRAgent extends Agent{
         myGUI=new AgentGUI(this);
         myGUI.showGui();
     }
-    public void executeAgent( double x1, double x2) {
+    public void executeAgentMLR( double x1, double x2) {
         addBehaviour(new OneShotBehaviour() {
             public void action() {
                 double [][] dataset=new double[][]{
@@ -31,10 +32,23 @@ public class MLRAgent extends Agent{
                         {77,32.5,330.7},
                         {77.8,32.9,349}
                 };
+                double[][] dataset2 = new  double[][]{{651,23},{762,26},{856,30},{1063,34},{1190,43},{1298,48},{1421,52},{1440,57},{1518,58}};
 
                 MultipleLinearRegression mlr = new MultipleLinearRegression(dataset);
                 mlr.printcalcY(x1,x2);
 
+
+            }
+        } );
+
+    }
+    public void executeAgentGradient( double x1) {
+        addBehaviour(new OneShotBehaviour() {
+            public void action() {
+                double[][] dataset = new  double[][]{{651,23},{762,26},{856,30},{1063,34},{1190,43},{1298,48},{1421,52},{1440,57},{1518,58}};
+
+                Gradient g= new Gradient(dataset);
+                g.printYHat(x1);
 
             }
         } );

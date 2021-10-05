@@ -47,7 +47,6 @@ public class MultipleLinearRegression {
         return vResult;
     }
 
-
     private double[][] getTMatrix(double[][] dataSet){
         double[][] mResult = new double[dataSet[0].length][dataSet.length];
         for (int i = 0; i <dataSet.length ; i++) {
@@ -58,17 +57,16 @@ public class MultipleLinearRegression {
         return mResult;
     }
 
-    private static double[][] matrixMultiplication(double[][] matrix1, double[][] matriz2){
-        double[][] mResult = new double[matrix1.length][matriz2[1].length];
+    private double[][] matrixMultiplication(double[][] matrix1, double[][] matrix2){
+        double[][] mResult = new double[matrix1.length][matrix2[1].length];
 
         for (int i = 0; i <matrix1.length ; i++) {
-
-            for (int j = 0; j <matriz2[0].length ; j++) {
-                double aux=0;
+            for (int j = 0; j <matrix2[0].length ; j++) {
+                double result=0;
                 for (int k = 0; k <matrix1[0].length ; k++) {
-                    aux += matrix1[i][k] * matriz2[k][j];
+                    result += matrix1[i][k] * matrix2[k][j];
                 }
-                mResult[i][j] = aux;
+                mResult[i][j] = result;
             }
         }
         return mResult;
@@ -128,6 +126,7 @@ public class MultipleLinearRegression {
     }
 
     public void printcalcY(double x1,double x2){
+        System.out.println("MLR");
         System.out.println("Y="+betaVector[0][0]+"+"+betaVector[1][0]+"*"+x1+"+"+betaVector[2][0]+"*"+x2);
         System.out.println("Y="+calcY(x1,x2));
     }
