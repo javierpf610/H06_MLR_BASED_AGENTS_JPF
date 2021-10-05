@@ -14,12 +14,14 @@ public class AgentGUI extends JFrame {
         myAgent = a;
 
         JPanel p = new JPanel();
-        p.setLayout(new GridLayout(3, 1));
-        p.add(new JLabel("Linear Regression"));
-        p.add(new JLabel("Set an X value to predict Y"));
+        p.setLayout(new GridLayout(6, 1));
+        p.add(new JLabel("The Normal equation approach"));
+        p.add(new JLabel("Set X1 and X2 values to predict Y"));
         x1Field = new JTextField(15);
-        x2Field = new JTextField(15);
+        p.add(new JLabel("X1"));
         p.add(x1Field);
+        x2Field = new JTextField(15);
+        p.add(new JLabel("X2"));
         p.add(x2Field);
         getContentPane().add(p, BorderLayout.CENTER);
 
@@ -27,8 +29,8 @@ public class AgentGUI extends JFrame {
         addButton.addActionListener( new ActionListener() {
             public void actionPerformed(ActionEvent ev) {
                 try {
-                    Double x1 = Double.parseDouble(x1Field.getText());
-                    Double x2 = Double.parseDouble(x2Field.getText());
+                    double x1 = Double.parseDouble(x1Field.getText());
+                    double x2 = Double.parseDouble(x2Field.getText());
                     myAgent.executeAgent(x1,x2);
                     x1Field.setText("");
                     x2Field.setText("");

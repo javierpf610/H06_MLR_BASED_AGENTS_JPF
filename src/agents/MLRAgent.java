@@ -9,7 +9,7 @@ public class MLRAgent extends Agent{
         myGUI=new AgentGUI(this);
         myGUI.showGui();
     }
-    public void executeAgent(final double x1,final double x2) {
+    public void executeAgent( double x1, double x2) {
         addBehaviour(new OneShotBehaviour() {
             public void action() {
                 double [][] dataset=new double[][]{

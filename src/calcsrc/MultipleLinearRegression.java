@@ -16,6 +16,7 @@ public class MultipleLinearRegression {
         yVector=getYVector(dataSet);
         xMatrix=getXMatrix(dataSet);
         xMatrixT=getTMatrix(xMatrix);
+        calcMLR();
     }
 
     public double[][] calcMLR(){
