@@ -10,7 +10,7 @@ public class Gradient {
         calcGradient();
     }
 
-    public double getBeta0(double[][] dataset,double b0,double b1){
+    private double getBeta0(double[][] dataset,double b0,double b1){
         double result = 0;
         double save=0;
         for(int i=0;i<dataset.length;i++){
@@ -21,7 +21,7 @@ public class Gradient {
         return result;
     }
 
-    public double getBeta1(double[][] dataset,double b0,double b1){
+    private double getBeta1(double[][] dataset,double b0,double b1){
         double result = 0;
         double save=0;
         for(int i=0;i<dataset.length;i++){
@@ -32,7 +32,7 @@ public class Gradient {
         return result;
     }
 
-    public double getError(double[][] dataset,double b0,double b1){
+    private double getError(double[][] dataset,double b0,double b1){
         double result = 0;
         double save=0;
         for(int i=0;i<dataset.length;i++){
@@ -43,7 +43,7 @@ public class Gradient {
         return result;
     }
 
-    public void calcGradient(){
+    private void calcGradient(){
         double a=0.0005,error=0;
         for (int i = 0; i <150000 ; i++) {
             double tempb0=getBeta0(dataset,beta0,beta1);
